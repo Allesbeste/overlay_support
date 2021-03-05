@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                 }),
                 background: Colors.green,
                 autoDismiss: false,
-                slideDismiss: true,
+                slideDismissDirection: DismissDirection.up,
               );
             },
             child: Text("Fixed Notification"),
@@ -46,7 +46,11 @@ class HomePage extends StatelessWidget {
           RaisedButton(
             child: Text("Bottom Notification"),
             onPressed: () {
-              showSimpleNotification(Text("Hello"), position: NotificationPosition.bottom);
+              showSimpleNotification(
+                Text("Hello"),
+                position: NotificationPosition.bottom,
+                slideDismissDirection: DismissDirection.down,
+              );
             },
           )
         ]),

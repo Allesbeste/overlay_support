@@ -43,12 +43,15 @@ class SlideDismissible extends StatelessWidget {
   final Widget child;
 
   final bool enable;
+  final DismissDirection direction;
 
-  const SlideDismissible({
+  SlideDismissible({
     @required Key key,
     @required this.child,
     @required this.enable,
-  }) : super(key: key);
+    DismissDirection direction = null,
+  })  : this.direction = direction != null ? direction : DismissDirection.horizontal,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,7 @@ class SlideDismissible extends StatelessWidget {
     return Dismissible(
       child: child,
       key: key,
+      direction: direction,
       onDismissed: (direction) {
         OverlaySupportEntry.of(context, requireForDebug: this).dismiss(animate: false);
       },
