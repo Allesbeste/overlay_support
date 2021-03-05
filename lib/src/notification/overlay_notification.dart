@@ -77,7 +77,7 @@ OverlaySupportEntry showSimpleNotification(
   /**
    * Support left/right to dismiss notification.
    */
-  @Deprecated("use slideDismissDirection instead") bool slideDismiss = false,
+  bool slideDismiss = false,
   /**
    * The position of notification, default is [NotificationPosition.top],
    */
